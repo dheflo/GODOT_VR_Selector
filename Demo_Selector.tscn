@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c8ahqs2x5dlwb"]
+
+[ext_resource type="PackedScene" uid="uid://w78onbd3fhie" path="res://addons/vr_selector/scenes/cursor.tscn" id="1_kdhtx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kdhtx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kdhtx"]
+
+[node name="DemoSelector" type="Node3D" unique_id=978591372]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=767490977]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1589234167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.97008204)
+
+[node name="cursor" parent="." unique_id=574804781 instance=ExtResource("1_kdhtx")]
+
+[node name="cube" type="Node3D" parent="." unique_id=426760079]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="cube" unique_id=662790920]
+mesh = SubResource("BoxMesh_kdhtx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cube/MeshInstance3D" unique_id=1163889358]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cube/MeshInstance3D/StaticBody3D" unique_id=1563221151]
+shape = SubResource("BoxShape3D_kdhtx")
+
+[editable path="cursor"]

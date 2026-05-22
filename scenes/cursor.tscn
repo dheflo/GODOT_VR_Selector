@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://w78onbd3fhie"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ps7mr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ps7mr"]
+transparency = 1
+albedo_color = Color(0.8039216, 0.5372549, 0.8117647, 0.3254902)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ps7mr"]
+
+[node name="cursor" type="Node3D" unique_id=574804781]
+
+[node name="size" type="Node3D" parent="." unique_id=1721695267]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="size" unique_id=2090587332]
+mesh = SubResource("SphereMesh_ps7mr")
+surface_material_override/0 = SubResource("StandardMaterial3D_ps7mr")
+
+[node name="Area3D" type="Area3D" parent="size" unique_id=1823561270]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="size/Area3D" unique_id=1943060529]
+shape = SubResource("SphereShape3D_ps7mr")
